@@ -45,17 +45,25 @@
 # sysfs uio
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,oembackup_sharedmem/uio/uio[0-9]+(/.*)?         u:object_r:sysfs_uio_file:s0
 
-# FPS Info
-/sys/class/drm/sde-crtc-0/measured_fps                              u:object_r:sysfs_fps:s0
-
 # Touch
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.RMX1921      u:object_r:hal_lineage_touch_default_exec:s0
-
-# Executables
-/system/bin/chargeonlymode                    u:object_r:charger_exec:s0
 
 # Dolby
 /(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dms@1\.0-service                     u:object_r:hal_dms_default_exec:s0
 
 # Sensor
 /(vendor|system/vendor)/bin/hw/android\.hardware\.sensors@1\.0-service\.realme_sdm710                     u:object_r:hal_sensors_default_exec:s0
+
+# FPS Info
+/sys/class/drm/sde-crtc-0/measured_fps                              u:object_r:sysfs_fps:s0
+
+# Audio
+/sys/kernel/sound_control/headphone_gain                     u:object_r:sysfs_headgain:s0
+/sys/kernel/sound_control/mic_gain                           u:object_r:sysfs_micgain:s0
+
+# Vibration
+/sys/class/leds/vibrator/vmax_override               u:object_r:sysfs_vibrator:s0
+/sys/class/leds/vibrator/vmax_mv_user                u:object_r:sysfs_vibrator:s0
+/sys/class/leds/vibrator/vmax_mv_call                u:object_r:sysfs_vibrator:s0
+/sys/class/leds/vibrator/vmax_mv_strong              u:object_r:sysfs_vibrator:s0
+

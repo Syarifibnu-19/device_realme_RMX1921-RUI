@@ -20,3 +20,16 @@ genfscon proc /devinfo        u:object_r:proc_devinfo:s0
 
 # FPS info
 genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps        u:object_r:sysfs_graphics:s0
+
+# Headphone gain
+genfscon sysfs /sys/kernel/sound_control/headphone_gain                     u:object_r:sysfs_headgain:s0
+
+# Microphone gain
+genfscon sysfs /sys/kernel/sound_control/mic_gain                           u:object_r:sysfs_micgain:s0
+
+# Vibration
+genfscon sysfs /sys/class/leds/vibrator/vmax_override               u:object_r:sysfs_vibrator:s0
+genfscon sysfs /sys/class/leds/vibrator/vmax_mv_user                u:object_r:sysfs_vibrator:s0
+genfscon sysfs /sys/class/leds/vibrator/vmax_mv_call                u:object_r:sysfs_vibrator:s0
+genfscon sysfs /sys/class/leds/vibrator/vmax_mv_strong              u:object_r:sysfs_vibrator:s0
+
